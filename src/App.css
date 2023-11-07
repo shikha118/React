@@ -1,0 +1,283 @@
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  position: relative;
+}
+
+.container .sidenav{
+  flex: 1;
+  order: 1;
+  height: 100vh;
+}
+.container .sidenav .project-title{
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+.container .sidenav .create-note-group{
+  padding: 0 1.5rem;
+}
+
+.container .sidenav .create-note-group button{
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: black;
+  color: white;
+  font-size: larger;
+  cursor: pointer;
+}
+
+.btn-button{
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: black;
+  color: white;
+  font-size: larger;
+}
+
+.container .main{
+  flex: 3;
+  order: 2;
+  background: #f7ecdc;
+  height: 100vh;
+}
+
+.back{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .back{
+    display: block;
+    width: 1.5rem;
+    margin-right: 1rem;
+  }
+  
+  .container .sidenav {
+    order: 1;
+  }
+  
+  .container .main {
+    order: 2;
+  }
+
+  .display-none{
+    display: none;
+  }
+
+  .active-li{
+    background: none !important;
+  }
+
+  .add-notes-group-popup{
+    width: 80% !important;
+    font-size: xx-small !important;
+  }
+
+  .popup-body-input-cont{
+    font-size: xx-small;
+  }
+
+  .popup .popup-body .popup-body-input-cont .popup-input-title{
+    min-width: max-content;
+  }
+
+  .popup .popup-body .popup-body-input-cont .popup-body-input input{
+    font-size: xx-small;
+  }
+}
+
+
+.popup{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup .add-notes-group-popup{
+  width: 50%;
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.popup h2{
+  margin: 0;
+}
+
+.popup .popup-body{
+  padding: 0.4rem;
+}
+
+.popup .popup-body .popup-body-input-cont{
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+
+
+.popup .popup-body .popup-body-input-cont .popup-input-title{
+  flex: 1;
+  order: 1;
+}
+
+
+.popup .popup-body .popup-body-input-cont .popup-body-input{
+  padding-left: 1rem;
+  flex: 3;
+  order: 2;
+}
+
+.popup .popup-body .popup-body-input-cont .popup-body-input input{
+  height: 1.8rem;
+  border-radius: 0.5rem;
+  border: 1.5px gray solid;
+  padding-left: 1rem;
+  width: 80%;
+}
+
+.popup .popup-body .popup-body-input-cont .popup-body-clr-inp{
+  padding-left: 1rem;
+  flex: 3;
+  order: 2;
+}
+
+.popup .popup-footer{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+
+.popup-hide{
+  display: none;
+}
+
+
+.group-ul{
+  list-style-type: none;
+}
+
+.group-ul li{
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 0.5rem;
+}
+
+.group-ul .active-li{
+  background: #f7ecdc;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.group-ul li .circle{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+
+
+.note-body-title{
+  display: flex;
+  height: 4rem;
+  background: lightgray;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.note-body-title .circle{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.note-body-content{
+  max-height: calc(100vh - 15rem);
+  min-height: calc(100vh - 15rem);
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.add-note{
+  height: 9rem;
+  background: lightgray;
+  position: relative;
+}
+
+.add-note textarea{
+  margin: 1rem;
+  width: 94%;
+  height: 65%;
+  border: solid 2px white;
+  border-radius: 6px;
+  font-size: large;
+  resize: none;
+  padding: 0.5rem;
+}
+
+.send-note{
+  position: absolute;
+  bottom: 1.5rem;
+  right: 2rem;
+  width: 1.5rem;
+  cursor: pointer;
+}
+
+
+.note-body-content-item{
+  display: flex;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  font-size: 14px;
+  font-weight: 500;
+}
+.note-body-content-item-date{
+  min-width: 9rem;
+}
+.note-body-content-item p{
+  padding: 0;
+  margin: 0;
+}
+
+
+.main-not-selected{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+}
+
+.main-not-selected div{
+  width: 30rem;
+}
